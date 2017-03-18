@@ -55,7 +55,7 @@ class Pen
       points_str += "#{x},#{y}"
     end
     
-    return "<polygon points=\"#{points_str}\" style=\"fill:black;stroke:black;stroke-width:0.5\" />"
+    return "<polygon points=\"#{points_str}\" style=\"fill:black;stroke:black;stroke-width:0\" />"
   end
 
   def tailx
