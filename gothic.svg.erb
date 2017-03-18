@@ -1,0 +1,33 @@
+<% 
+require '/Users/matt/git/gothic/pen.rb'
+require '/Users/matt/git/gothic/pen_strokes.rb'
+require '/Users/matt/git/gothic/pen_letters.rb'
+
+nib = 20
+flat_nib = nib*0.1
+angle = 40
+
+pen = Pen.new(nib,flat_nib,angle) 
+height = pen.line_height
+page = 2*(pen.line_height + pen.line_space)
+%>
+
+<svg  xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      height="<%=page%>" width="20*pen.line_height">
+
+  <line x1="0" y1="<%=height%>" x2="<%=20*height%>" y2="<%=height%>"
+      stroke-width="1" stroke="blue"/>
+  <line x1="0" y1="<%=2*height%>" x2="<%=20*height%>" y2="<%=2*height%>"
+      stroke-width="1" stroke="blue"/>
+
+  <line x1="0" y1="<%=height+pen.line_space%>" x2="<%=20*height%>" y2="<%=height+pen.line_space%>"
+      stroke-width="1" stroke="blue"/>
+  <line x1="0" y1="<%=2*height+pen.line_space%>" x2="<%=20*height%>" y2="<%=2*height+pen.line_space%>"
+      stroke-width="1" stroke="blue"/>
+
+<%= pen.spell("gothic") %>
+<% pen.cr %>
+<%= pen.spell("   font") %>
+
+</svg>
